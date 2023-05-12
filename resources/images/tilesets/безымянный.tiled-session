@@ -19,7 +19,8 @@
             }
         },
         "map.tmx#forest_": {
-            "scaleInDock": 3
+            "scaleInDock": 3,
+            "scaleInEditor": 4
         }
     },
     "last.imagePath": "C:/Users/Plane/Documents/GitHub/mage_fantasy/resources/images/tilesets",
