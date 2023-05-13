@@ -1,6 +1,7 @@
 import arcade
 from pyglet.math import Vec2
 from functions import load_animations
+from projectile_class import Projectile
 
 class Player(arcade.Sprite):
     def __init__(self, window, position):
@@ -23,6 +24,11 @@ class Player(arcade.Sprite):
             scale=3,
             )
         
+        props = arcade.SpriteList()
+        props.extend(self.scene['Walls'])
+        props.extend(self.scene['Water'])
+        self.engine = arcade.PhysicsEngineSimple(self, props)
+
         self.speed = 5
         load = [
             ['spawn',4], ['idle',4], ['run',8],  ['jump_idle',1], ['jump_run',1], 
@@ -57,14 +63,16 @@ class Player(arcade.Sprite):
         else:
             if self.state != 'run':
                 self.change_animation(self.side, 'run')
-            
-        
 
         vec = Vec2(self.change_x, self.change_y).normalize()
         self.change_x = vec[0]*self.speed
         self.change_y = vec[1]*self.speed
-        super().update()
+        #super().update()
+        self.engine.update()
         self.update_animation()
+
+    def shoot(self, target):
+        self.scene['Projectiles'].append(Projectile(self, target, self.scene['Walls']))
 
     def change_animation(self, side, state):
         self.side, self.state = side, state

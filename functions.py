@@ -1,10 +1,7 @@
 import arcade
 
 def load_animations(load, file):
-    animations = {
-        'right':{},
-        'left':{}
-        }
+    animations = {'right':{}, 'left':{}}
     for y in range(len(load)):
         anim = load[y][0]
         count = load[y][1]
@@ -21,3 +18,15 @@ def load_animations(load, file):
             animations['right'][anim].append(arcade.AnimationKeyframe(id_r, duration, t_r))
             animations['left'][anim].append(arcade.AnimationKeyframe(id_l, duration, t_l))
     return animations
+
+def load_animation(file, size, max_size, duration):
+    width = max_size[0]
+    height = max_size[1]
+    animation = []
+    for y in range(0, height, size):
+        for x in range(0, width, size):
+            texture = arcade.load_texture(file, x, y, size, size)
+            id_ = sum(list(file.encode('utf8')))+x*100+y*10
+            animation.append(arcade.AnimationKeyframe(id_, duration, texture))
+    return animation
+        
