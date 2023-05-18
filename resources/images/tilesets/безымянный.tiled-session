@@ -7,9 +7,31 @@
     "expandedProjectPaths": [
         "."
     ],
+    "file.lastUsedOpenFilter": "Все файлы (*)",
     "fileStates": {
         "#forest_": {
             "dynamicWrapping": false
+        },
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/1_Industrial_Tileset_1.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/Tileset.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/hero.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/level_tileset.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/map.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1919,
+                "y": 1279
+            }
         },
         "forest_.tsx": {
             "scaleInDock": 1,
@@ -23,8 +45,8 @@
             "scale": 3,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 710.8333333333333,
-                "y": 365
+                "x": 638,
+                "y": 565
             }
         },
         "map.tmx#forest_": {
@@ -42,10 +64,12 @@
     "map.tileWidth": 16,
     "map.width": 75,
     "openFiles": [
-        "map.tmx"
+        "map.tmx",
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/map.tmx"
     ],
     "project": "безымянный.tiled-project",
     "recentFiles": [
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/map.tmx",
         "map.tmx",
         "forest_.tsx",
         "forest_walls.tsx"

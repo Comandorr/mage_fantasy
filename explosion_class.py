@@ -7,12 +7,14 @@ class Explosion(arcade.AnimatedTimeBasedSprite):
     def __init__(self, owner, wall):
         super().__init__()
         self.window = owner.window
-        self.frames = load_animation(
-            ':resources:images/spritesheets/explosion.png',
-            256, (4096, 3584), 5)
+        #self.frames = load_animation(
+        #    ':resources:images/spritesheets/explosion.png',
+        #    256, (4096, 3584), 5)
+        self.frames = owner.window.explosion_frames
         self.center_x = wall.center_x
         self.center_y = wall.center_y
-        self.set_hit_box(self.frames[10].texture.hit_box_points)
+        #self.set_hit_box(self.frames[10].texture.hit_box_points)
+        self.set_hit_box(owner.window.explosion_hitbox)
         owner.window.scene['Projectiles'].append(self)
         owner.window.camera.shake(Vec2(random.choice([-2, 2]), random.choice([-3, 3])), speed=1, damping=0.95)
         owner.window.camera.update()
