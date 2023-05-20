@@ -7,16 +7,21 @@
     "expandedProjectPaths": [
         "."
     ],
-    "file.lastUsedOpenFilter": "Все файлы (*)",
     "fileStates": {
         "#forest_": {
             "dynamicWrapping": false
         },
         "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/1_Industrial_Tileset_1.tsx": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/Tileset.tsx": {
             "scaleInDock": 1
+        },
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/dungeon_.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 3,
+            "scaleInEditor": 3
         },
         "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/hero.tsx": {
             "dynamicWrapping": true,
@@ -29,8 +34,8 @@
             "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1919,
-                "y": 1279
+                "x": 1918,
+                "y": 1278
             }
         },
         "forest_.tsx": {
@@ -42,14 +47,15 @@
             "scaleInEditor": 3
         },
         "map.tmx": {
-            "scale": 3,
-            "selectedLayer": 2,
+            "scale": 4,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 638,
-                "y": 565
+                "x": 138.375,
+                "y": 240.5
             }
         },
         "map.tmx#forest_": {
+            "dynamicWrapping": false,
             "scaleInDock": 3,
             "scaleInEditor": 4
         },
@@ -57,24 +63,23 @@
             "scaleInDock": 4
         }
     },
-    "last.imagePath": "C:/Users/Plane/Desktop/!fantasy_ [version 2.0]/forest_",
-    "map.height": 45,
+    "last.imagePath": "C:/Users/Plane/Documents/GitHub/mage_fantasy/resources/images/tilesets",
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 75,
+    "map.width": 40,
     "openFiles": [
         "map.tmx",
-        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/map.tmx"
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/dungeon_.tsx"
     ],
     "project": "безымянный.tiled-project",
     "recentFiles": [
-        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/map.tmx",
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/dungeon_.tsx",
         "map.tmx",
+        "C:/Users/Plane/Documents/GitHub/Inconvenient-Superpowers/map.tmx",
         "forest_.tsx",
         "forest_walls.tsx"
     ],
-    "tileset.embedInMap": false,
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 16,

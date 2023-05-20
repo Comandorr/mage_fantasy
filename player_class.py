@@ -1,6 +1,6 @@
 import arcade
 from pyglet.math import Vec2
-from functions import load_animations
+from functions import load_animations2
 from projectile_class import Projectile
 
 class Player(arcade.Sprite):
@@ -12,7 +12,7 @@ class Player(arcade.Sprite):
         self.cur_frame_idx = 0
         self.state = 'idle'
         self.side = 'right'
-        file = 'resources/images/tilesets/player.png'
+        file = 'resources/images/tilesets/knight_.png'
         super().__init__(
             filename = file,
             image_x = 0,
@@ -24,18 +24,17 @@ class Player(arcade.Sprite):
             scale=3,
             )
         
-        props = arcade.SpriteList()
-        props.extend(self.scene['Walls'])
-        props.extend(self.scene['Water'])
-        self.engine = arcade.PhysicsEngineSimple(self, props)
+        self.engine = arcade.PhysicsEngineSimple(self, self.scene['walls2'])
 
         self.speed = 5
-        load = [
-            ['spawn',4], ['idle',4], ['run',8],  ['jump_idle',1], ['jump_run',1], 
-            ['land',3],  ['roll',8], ['turn',4], ['hit',4],       ['death',4], ]
-        self.animations = load_animations(load, file)
+        load = [['idle',4], ['run',4], ['jump',4],  ['turn',4], ['hurt',4], ['death',4]]
+        self.animations = load_animations2(load, file)
         self.change_animation(self.side, self.state)
-
+        self.sword = arcade.Sprite(
+            'resources/images/tilesets/weapons_.png',
+            scale=3, image_x=24, image_y=0, image_width=12, image_height=24,
+            center_x=self.right, center_y=self.center_y)
+    
     def update(self, delta_time: float = 1 / 60):
         self.change_x = 0
         if self.window.keys[arcade.key.D] and not self.window.keys[arcade.key.A]:
@@ -68,17 +67,23 @@ class Player(arcade.Sprite):
         self.change_x = vec[0]*self.speed
         self.change_y = vec[1]*self.speed
         #super().update()
+        if self.side == 'right':
+            self.sword.center_x=self.center_x+self.width/2
+        else:
+            self.sword.center_x=self.center_x-self.width/2
+        self.sword.center_y=self.center_y
+        self.sword.angle += 1
+        pos = arcade.rotate_point(self.sword.center_x, self.sword.center_y, self.center_x, self.center_y, self.sword.angle)
+        #self.sword.turn_left(1)
+        self.sword.position = pos
         self.engine.update()
         self.update_animation()
-
-    def shoot(self, target):
-        self.scene['Projectiles'].append(Projectile(self, target, self.scene['Walls']))
 
     def change_animation(self, side, state):
         self.side, self.state = side, state
         self.frames = self.animations[self.side][self.state]
-        self.cur_frame_idx = -1
-        self.time_counter = 0
+        #self.cur_frame_idx = -1
+        #self.time_counter = 0
         self.update_animation()
 
     def update_animation(self, delta_time: float = 1 / 60):

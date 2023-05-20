@@ -1,5 +1,3 @@
-import os
-from PyQt5.QtWidgets import QFileDialog
-
-folder = QFileDialog.getExistingDirectory()
-spisok = os.listdir(folder)
+n = 5.5
+n = int(n)
+print(n)
